@@ -88,7 +88,7 @@ class BlockChain(object):
     def last_block(self):
         return self.chain[-1]
     
-    def poof_of_word(self, last_proof):
+    def proof_of_word(self, last_proof):
         """
         简单的工作量证明:
         - 查找一个 p' 使得 hash(pp') 以4个0开头
