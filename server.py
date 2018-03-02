@@ -62,7 +62,7 @@ class Transactions(web.RequestHandler):
         self.set_header("Content-Type", 'application/json;charset="utf-8"')
         body = json.loads(self.request.body, strict=False)
         required = ['sender', 'recipient', 'amount']
-        if not all(k in body.keys for k in required):
+        if not all(k in body.keys() for k in required):
             raise web.HTTPError(400, log_message="Missing values.")
         index = block_chain.new_transaction(body.get('sender'), body.get('recipient'), body.get('amount'))
         
